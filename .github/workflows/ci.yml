@@ -1,0 +1,37 @@
+name: CI Pipeline - MU-APP-2026-C06
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality-gate:
+    name: Compuerta de Calidad y Verificación
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar Código Fuente
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Instalar Dependencias del Proyecto
+        run: npm ci
+
+      - name: 1. Verificación Determinista de Formato (Prettier)
+        run: npm run format:check
+
+      - name: 2. Análisis Estático y Reglas Arquitectónicas (ESLint)
+        run: npm run lint
+
+      - name: 3. Ejecución de Pruebas Automatizadas (Jest)
+        run: npm test
+
+      - name: 4. Compilación del Proyecto (Build)
+        run: npm run build

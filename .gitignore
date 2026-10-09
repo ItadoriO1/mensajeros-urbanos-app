@@ -1,0 +1,27 @@
+# Node & Dependencias
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Compilación y temporales
+dist/
+build/
+.husky/_
+
+# Entorno y Secretos
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Cobertura de pruebas
+coverage/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
