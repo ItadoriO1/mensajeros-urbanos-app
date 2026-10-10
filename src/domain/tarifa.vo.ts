@@ -3,6 +3,10 @@
  * Restricción Legal: Ley 1480 de 2011 y Regla de Negocio RN-05.
  * Prohibido cobrar fletes negativos o sobrecostos ocultos.
  */
+/**
+ * TARIFA.VO.TS
+ */
+
 export class TarifaValueObject {
   constructor(
     public readonly tarifaBaseCop: number,
