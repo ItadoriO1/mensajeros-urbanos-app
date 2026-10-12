@@ -1,3 +1,6 @@
+/*
+slaentity
+*/
 export class SlaEntity {
   constructor(
     public readonly id: string,
