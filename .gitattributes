@@ -1,0 +1,5 @@
+# Fin de linea unico (LF) en el repositorio y en cada checkout.
+# Regla 1 del Plan Maestro de Gobernanza Tecnica (MU-APP-2026-C06).
+# Sin esto, Git depende de core.autocrlf (config local) y Git for Windows lo
+# deja en true, convirtiendo LF a CRLF y rompiendo la compuerta de calidad.
+* text=auto eol=lf
